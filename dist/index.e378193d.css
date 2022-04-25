@@ -27,6 +27,10 @@ header .frame__about {
   display: inline-block;
 }
 
+header .frame__about:hover {
+  cursor: pointer;
+}
+
 header .frame__about .frame__about-item {
   display: none;
 }
@@ -124,8 +128,7 @@ header .frame__about .frame__about-item--current {
   }
 
   .content__item {
-    min-height: 100vh;
-    padding: 12rem 8vw 3rem;
+    padding: -1rem 8vw 3rem;
   }
 
   .content__item--home {
