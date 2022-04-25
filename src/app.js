@@ -27,7 +27,6 @@ let DOM = {
 			isVisible: false
 		}
 	},
-
 	links: {
 		about: {
 			anchor: document.querySelector('a.frame__about'),
@@ -45,48 +44,49 @@ const timelineSettings = {
 	charsDuration: 0.5
 }
 
-const timeline = gsap.timeline({paused:true})
-	.addLabel('start')
-	//stagger animation home section chars
-	.staggerTo( DOM.content.home.chars, timelineSettings.charsDuration, {
-		ease: 'Power3.easeIn',
-		y: '-100%',
-		opacity:0
-	}, timelineSettings.staggerValue, 'start')
+const timeline = gsap.timeline({paused: true})
+    .addLabel('start')
+    // Stagger the animation of the home section chars
+    .staggerTo( DOM.content.home.chars, timelineSettings.charsDuration, {
+        ease: 'Power3.easeIn',
+        y: '-100%',
+        opacity: 0
+    }, timelineSettings.staggerValue, 'start')
+    // Here we do the switch
+    // We need to toggle the current class for the content sections
+    .addLabel('switchtime')
+    .add( () => {
+        DOM.content.home.section.classList.toggle('content__item--current');
+        DOM.content.about.section.classList.toggle('content__item--current');
+    })
+    // Change the body's background color
+    .to(document.body, {
+        duration: 0.8,
+        ease: 'Power1.easeInOut',
+        backgroundColor: '#c3b996'
+    }, 'switchtime-=timelineSettings.charsDuration/4')
+    // Start values for the about section elements that will animate in
+    .set(DOM.content.about.chars, {
+        y: '100%'
+    }, 'switchtime')
+    .set(DOM.content.about.picture, {
+        y: '40%',
+        rotation: -4,
+        opacity: 0
+    }, 'switchtime')
+    // Stagger the animation of the about section chars
+    .staggerTo( DOM.content.about.chars, timelineSettings.charsDuration, {
+        ease: 'Power3.easeOut',
+        y: '0%'
+    }, timelineSettings.staggerValue, 'switchtime')
+    // Finally, animate the picture in
+    .to( DOM.content.about.picture, 0.8, {
+        ease: 'Power3.easeOut',
+        y: '0%',
+        opacity: 1,
+        rotation: 0
+    }, 'switchtime+=0.6');
 
-	//Here we toggle current class 
-	.addLabel('switchtime')
-	.add( () => {
-		DOM.content.home.section.classList.toggle('content__item--current')
-		DOM.content.about.section.classList.toggle('content__item--current')
-	})
-	//Change bg color
-	.to(document.body, {
-		duration: 0.8,
-		ease: 'Power1.easeInOut',
-		backgroundColor: '#c3b996'
-	}, 'switchtime -= timelineSettings.charsDuration/4')
-	//Start values about section
-	.set(DOM.content.about.chars, {
-		y: '100%'
-	}, 'switchtime')
-	.set(DOM.content.about.picture, {
-		y: '40%',
-		rotation: -4,
-		opacity: 0
-	}, 'switchtime')
-	//stagger animation about section chars 
-	.staggerTo( DOM.content.about.chars, timelineSettings.charsDuration, {
-		ease: 'Power3.easeOut',
-		y: '0%'
-	}, timelineSettings.staggerValue, 'switchtime')
-	//Picture in animation
-	.to(DOM.content.about.picture, 0.8, {
-		ease: 'Power3.easeOut',
-		y: '0%',
-		opacity: 1,
-		rotation: 0
-	}, 'switchtime += 0.6')
 
 //Clicking on about/close link toggle content area, by playing or reversing timeline
 //We have to switch current state on about/close link

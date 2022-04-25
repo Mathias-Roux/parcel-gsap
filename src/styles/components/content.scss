@@ -1,13 +1,13 @@
 .content{
 	display: grid;
 	grid-template-columns: 100%;
-	grid-temlpate-areas: "content-item";
+	grid-template-areas: "content-item";
 	justify-content: center;
 	position: relative;
 }
 
 .content__item{
-	grid-areas: content-item;
+	grid-area: content-item;
 	opacity: 0;
 	pointer-events: none;
 	display: flex;
@@ -76,26 +76,11 @@
 	padding-bottom: 5rem;
 }
 
+.char {
+	will-change: transform;
+}
 
 @media screen and (min-width: 53em) {
-	header {
-		position: absolute;
-		text-align: left;
-		top: 0;
-		left: 0;
-		display: grid;
-		align-content: space-between;
-		width: 100%;
-		max-width: none;
-		height: 100vh;
-		padding: 3rem 8vw;
-		pointer-events: none;
-		grid-template-columns: 20% 60% 20%;
-		grid-template-rows: auto auto auto;
-		grid-template-areas: 'home title about'
-							'... ... ...'
-							'... ... credits';
-	}
 
 	.frame__about {
 		margin: 0;
@@ -112,12 +97,14 @@
 	.content__item--home {
 		max-height: none;
 	}
+
 	.content__figure {
 		max-width: 48vw;
 		justify-self: flex-end;
 		margin-left: auto;
 		margin-top: -5vw;
 	}
+
 	.content__figure-caption {
 		position: absolute;
 		right: 100%;
