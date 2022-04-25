@@ -16,6 +16,7 @@ body {
 header {
   text-align: right;
   padding: 3rem 5vw;
+  position: relative;
 }
 
 header .frame__about {
@@ -39,6 +40,129 @@ header .frame__about .frame__about-item--current {
   grid-template-columns: 100%;
   justify-content: center;
   display: grid;
+  position: relative;
+}
+
+.content__item {
+  grid-areas: content-item;
+  opacity: 0;
+  pointer-events: none;
+  height: 0;
+  flex-direction: column;
+  align-content: center;
+  padding: 0 1rem;
+  display: flex;
+  overflow: hidden;
+}
+
+.content__item--home {
+  min-height: 300px;
+  justify-content: center;
+}
+
+.content__item--current {
+  height: auto;
+  opacity: 1;
+  pointer-events: auto;
+  overflow: visible;
+}
+
+.content__paragraph {
+  letter-spacing: -.2vw;
+  word-spacing: 1vw;
+  text-transform: uppercase;
+  flex: none;
+  margin: 0;
+  font-size: 7vw;
+  font-weight: 300;
+  line-height: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.content__paragraph--first {
+  margin-top: auto;
+}
+
+.content__paragraph--last {
+  margin-bottom: auto;
+}
+
+.content__paragraph--large {
+  font-size: 10vw;
+}
+
+.content__paragraph--right {
+  align-self: flex-end;
+}
+
+.content__figure {
+  max-width: 100%;
+  margin: .5rem 0 0;
+  position: relative;
+}
+
+.content__figure-img {
+  max-width: 100%;
+}
+
+.content__figure-caption {
+  margin: 1rem 0 0;
+  padding-bottom: 5rem;
+  font-size: .85rem;
+}
+
+@media screen and (min-width: 53em) {
+  header {
+    text-align: left;
+    width: 100%;
+    max-width: none;
+    height: 100vh;
+    pointer-events: none;
+    grid-template: "home title about"
+                   ". . ."
+                   ". . credits"
+                   / 20% 60% 20%;
+    align-content: space-between;
+    padding: 3rem 8vw;
+    display: grid;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .frame__about {
+    grid-area: about;
+    place-self: start end;
+    margin: 0;
+  }
+
+  .content__item {
+    min-height: 100vh;
+    padding: 12rem 8vw 3rem;
+  }
+
+  .content__item--home {
+    max-height: none;
+  }
+
+  .content__figure {
+    max-width: 48vw;
+    justify-self: flex-end;
+    margin-top: -5vw;
+    margin-left: auto;
+  }
+
+  .content__figure-caption {
+    text-align: right;
+    width: 50%;
+    margin-right: 2rem;
+    padding: 0;
+    font-size: 1rem;
+    position: absolute;
+    bottom: 0;
+    right: 100%;
+  }
 }
 
 /*# sourceMappingURL=index.e378193d.css.map */

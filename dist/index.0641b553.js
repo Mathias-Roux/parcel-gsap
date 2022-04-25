@@ -526,7 +526,6 @@ function hmrAcceptRun(bundle, id) {
 }
 
 },{}],"bNKaB":[function(require,module,exports) {
-console.log('yes');
 
 },{}]},["jKwHT","bNKaB"], "bNKaB", "parcelRequirede98")
 

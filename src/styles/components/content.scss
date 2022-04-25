@@ -3,4 +3,176 @@
 	grid-template-columns: 100%;
 	grid-temlpate-areas: "content-item";
 	justify-content: center;
+	position: relative;
 }
+
+.content__item{
+	grid-areas: content-item;
+	opacity: 0;
+	pointer-events: none;
+	display: flex;
+	align-content: center;
+	flex-direction: column;
+	padding: 0 1rem;
+	overflow: hidden;
+	height: 0;
+}
+
+.content__item--home{
+	justify-content: center;
+	min-height: 300px;
+}
+
+.content__item--current{
+	overflow: visible;
+	height: auto;
+	opacity: 1;
+	pointer-events: auto;
+}
+
+.content__paragraph{
+	font-size: 7vw;
+	font-weight: 300;
+	letter-spacing: -0.2vw;
+	word-spacing: 1vw;
+	text-transform: uppercase;
+	margin: 0;
+	line-height: 1;
+	overflow: hidden;
+	flex: none;
+	position: relative;
+}
+
+.content__paragraph--first{
+	margin-top: auto;
+}
+
+.content__paragraph--last{
+	margin-bottom: auto;
+}
+
+.content__paragraph--large{
+	font-size: 10vw;
+}
+
+.content__paragraph--right{
+	align-self: flex-end;
+}
+
+.content__figure{
+	margin: 0;
+	max-width: 100%;
+	margin-top: 0.5rem;
+	position: relative;
+}
+
+.content__figure-img{
+	max-width: 100%;
+}
+
+.content__figure-caption{
+	margin: 1rem 0 0 0;
+	font-size: 0.85rem;
+	padding-bottom: 5rem;
+}
+
+
+@media screen and (min-width: 53em) {
+	header {
+		position: absolute;
+		text-align: left;
+		top: 0;
+		left: 0;
+		display: grid;
+		align-content: space-between;
+		width: 100%;
+		max-width: none;
+		height: 100vh;
+		padding: 3rem 8vw;
+		pointer-events: none;
+		grid-template-columns: 20% 60% 20%;
+		grid-template-rows: auto auto auto;
+		grid-template-areas: 'home title about'
+							'... ... ...'
+							'... ... credits';
+	}
+
+	.frame__about {
+		margin: 0;
+		grid-area: about;
+		align-self: start;
+		justify-self: end;
+	}
+
+	.content__item {
+		min-height: 100vh;
+		padding: 12rem 8vw 3rem;
+	}
+	
+	.content__item--home {
+		max-height: none;
+	}
+	.content__figure {
+		max-width: 48vw;
+		justify-self: flex-end;
+		margin-left: auto;
+		margin-top: -5vw;
+	}
+	.content__figure-caption {
+		position: absolute;
+		right: 100%;
+		bottom: 0;
+		margin-right: 2rem;
+		text-align: right;
+		width: 50%;
+		font-size: 1rem;
+		padding: 0;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
