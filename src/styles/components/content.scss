@@ -1,0 +1,6 @@
+.content{
+	display: grid;
+	grid-template-columns: 100%;
+	grid-temlpate-areas: "content-item";
+	justify-content: center;
+}

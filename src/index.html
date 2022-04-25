@@ -8,6 +8,31 @@
 	<script type="module" src="app.js"></script>
 </head>
 <body>
-	<div>HELLO WORLD!</div>
+
+	<header class="header">
+		<a class="frame__about">
+			<span class="frame__about-item frame__about-item--current">About</span>
+			<span class="frame__about-item">Close</span>
+		</a>
+	</header>
+
+	<div class="content">
+		<section class="content__item content__item--home content__item--current">
+			<p class="content__paragraph content__paragraph--large content__paragraph--first" data-splitting>Make animations</p>
+			<p class="content__paragraph content__paragraph--large content__paragraph--right content__paragraph--last" data-splitting>with Gsap</p>
+		</section>
+		<section class="content__item content__item--about">
+			<p class="content__paragraph" data-splitting>Here is my</p>
+			<p class="content__paragraph content__paragraph--right" data-splitting>first gsap project,</p>
+			<p class="content__paragraph" data-splitting>inspired by</p>
+			<p class="content__paragraph" data-splitting>codrops !</p>
+			<figure class="content__figure">
+				<img class="content__figure-img" src="images/31.jpeg" alt="photo" />
+				<figcaption class="content__figure-caption">This photo is useless, but it dresses the screen and helps me to know more about the capacity of the JS Gsap library.
+				</figcaption>
+			</figure>
+		</section>
+	</div>
+<script src="app.js"></script>
 </body>
 </html>

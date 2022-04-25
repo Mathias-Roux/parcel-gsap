@@ -1,9 +1,41 @@
-*{
-	margin: 0;
-	padding: 0;
+*,
+*::after,
+*::before {
 	box-sizing: border-box;
 }
 
+$color-text: #000;
+$color-bg: #faf5e3;
+$color-link:#8d561f;
+$color-link-hover: #000;
+
+
 body{
-	background: seagreen;
+	margin: 0;
+	padding: 0;
+	color: $color-text;
+	background-color: $color-bg;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	overflow: hidden;
+	overflow-y: scroll;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

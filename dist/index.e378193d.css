@@ -1,16 +1,44 @@
-div {
-  color: #f5f5f5;
-  font-size: 5rem;
-}
-
-* {
+*, :after, :before {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
 body {
-  background: #2e8b57;
+  color: #000;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #faf5e3;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+header {
+  text-align: right;
+  padding: 3rem 5vw;
+}
+
+header .frame__about {
+  color: #000;
+  margin: 1rem 0;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-block;
+}
+
+header .frame__about .frame__about-item {
+  display: none;
+}
+
+header .frame__about .frame__about-item--current {
+  display: inline-block;
+}
+
+.content {
+  grid-temlpate-areas: "content-item";
+  grid-template-columns: 100%;
+  justify-content: center;
+  display: grid;
 }
 
 /*# sourceMappingURL=index.e378193d.css.map */
