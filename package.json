@@ -1,0 +1,14 @@
+{
+  "name": "Parcel-gsap",
+  "source": "src/index.html",
+  "scripts": {
+    "start": "parcel",
+    "clean": "rm -rf dist/*",
+    "build:parcel": "parcel build src/index.html --no-content-hash --no-source-maps --public-url ./",
+    "build": "npm run clean && npm run build:parcel"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.5.0",
+    "parcel": "^2.5.0"
+  }
+}
