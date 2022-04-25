@@ -12,6 +12,7 @@
     "parcel": "^2.5.0"
   },
   "dependencies": {
-    "gsap": "^3.10.4"
+    "gsap": "^3.10.4",
+    "splitting": "^1.0.6"
   }
 }
